@@ -1,7 +1,39 @@
-BitAlert: Sistema de Alerta de Preço de Bitcoin✨ Para o RecrutadorEste é um projeto pessoal que criei para automatizar o monitoramento de preços de ativos financeiros. O BitAlert vigia o preço do Bitcoin e me envia um alerta por mensagem de texto (SMS) quando o valor atinge um preço de compra ou venda que eu defini.A solução é totalmente autônoma, opera em nuvem e não tem custo de manutenção. O objetivo é demonstrar minha habilidade em construir projetos eficientes, robustos e inteligentes, utilizando tecnologias modernas para resolver problemas reais.💻 Detalhes TécnicosEste projeto consiste em um sistema de alerta assíncrono e de baixo custo, construído sobre uma arquitetura serverless. O sistema monitora o preço de um ativo e envia notificações automáticas por SMS quando um preço-alvo é atingido.Arquitetura e TecnologiasBackend: Node.jsFunção Serverless: AWS Lambda (executa a lógica de negócios sem a necessidade de um servidor dedicado).Agendamento: AWS EventBridge (dispara a função Lambda a cada 15 segundos, seguindo uma regra cron).Fonte de Dados: CoinGecko API (API pública e RESTful para obter dados de preço).Serviço de Notificação: Twilio (API de terceiros para o envio de mensagens SMS).Gerenciamento de Pacotes: npm.Fluxo de ExecuçãoO AWS EventBridge invoca a função AWS Lambda a cada 15 segundos.A função executa o código em Node.js, fazendo uma requisição HTTP para a API da CoinGecko via axios para obter o preço atual do Bitcoin.O preço retornado é comparado com os valores de alerta e alvo definidos em variáveis de ambiente.Com base na condição de preço, a função utiliza a API da Twilio para enviar uma mensagem SMS.O processo é finalizado, e a função Lambda aguarda a próxima invocação agendada.Como Executar o ProjetoClone o repositório: git clone [URL_DO_SEU_REPOSITÓRIO]Navegue até o diretório do projeto: cd bitalertInstale as dependências: npm installConfigure as variáveis de ambiente no arquivo .env (exemplo abaixo):TWILIO_ACCOUNT_SID=SEU_SID_AQUI
-TWILIO_AUTH_TOKEN=SEU_AUTH_TOKEN_AQUI
-TWILIO_PHONE_NUMBER=SEU_NUMERO_TWILIO_AQUI
-MY_PHONE_NUMBER=SEU_NUMERO_PESSOAL_AQUI
-ALVO_COMPRA_BTC=60000
-ALVO_VENDA_BTC=70000
-Compacte o código e as dependências em um arquivo ZIP.Faça o upload do arquivo ZIP para a AWS Lambda e configure o AWS EventBridge para o agendamento.Habilidades DemonstradasEste projeto foi uma oportunidade para aprimorar minhas habilidades em:Arquitetura Cloud e Serverless: Experiência prática com o ecossistema da AWS.Integração de APIs: Consumo e processamento de dados de APIs REST.Automação e DevOps: Configuração de agendamentos e automação de tarefas.Segurança: Manuseio de variáveis de ambiente e credenciais.Node.js: Desenvolvimento de backend.
+# Sistema de Monitoramento de Preço em Tempo Real (Serverless)
+
+### **Objetivo do Projeto**
+
+Este projeto consiste em um sistema de alerta autônomo e de baixo custo, construído sobre uma arquitetura **serverless**. O objetivo é monitorar o preço de um ativo financeiro específico (como o Bitcoin) e enviar notificações por SMS para o usuário quando um preço-alvo de compra ou venda for atingido ou estiver próximo.
+
+A solução utiliza uma arquitetura **event-driven** na AWS, garantindo alta disponibilidade, escalabilidade e um modelo de pagamento por uso, resultando em um custo de operação praticamente zero.
+
+---
+
+### **Tecnologias e Arquitetura**
+
+* **Backend:** Node.js
+* **Função Serverless:** **AWS Lambda** (processa a lógica de negócios sem a necessidade de um servidor dedicado)
+* **Agendamento:** **AWS EventBridge** (utilizado para disparar a função Lambda a cada 15 segundos, seguindo uma regra cron)
+* **Fonte de Dados:** **CoinGecko API** (API pública e RESTful para obter dados de preço)
+* **Serviço de Notificação:** **Twilio** (API de terceiros para o envio de mensagens SMS)
+
+---
+
+### **Fluxo de Dados e Lógica**
+
+1.  O **AWS EventBridge** dispara um evento a cada 15 segundos, invocando a função **AWS Lambda**.
+2.  A função executa o código em Node.js, fazendo uma requisição HTTP para a API pública da **CoinGecko** via `axios` para obter o preço atual do ativo.
+3.  O preço retornado é analisado e comparado com os valores de alerta e alvo definidos em variáveis de ambiente.
+4.  Com base na condição de preço (aproximação ou batimento do alvo), a função utiliza a API da **Twilio** para enviar uma mensagem SMS.
+5.  O processo é finalizado, e a função Lambda aguarda a próxima invocação agendada.
+
+---
+
+### **Habilidades Demonstradas**
+
+Este projeto demonstra proficiência em:
+
+* **Desenvolvimento Cloud-Native e Serverless:** Experiência prática com a arquitetura serverless da AWS.
+* **Integração de APIs:** Capacidade de consumir e processar dados de APIs externas.
+* **Manuseio de Variáveis de Ambiente:** Conhecimento em boas práticas de segurança para chaves e tokens de acesso.
+* **Arquitetura de Software:** Capacidade de separar a lógica do projeto em módulos (checagem, notificação) para facilitar a manutenção.
+* **DevOps Básico:** Configuração de agendamentos e automação de tarefas em um ambiente de nuvem.
