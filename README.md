@@ -36,4 +36,4 @@ Este projeto demonstra proficiência em:
 * **Integração de APIs:** Capacidade de consumir e processar dados de APIs externas.
 * **Manuseio de Variáveis de Ambiente:** Conhecimento em boas práticas de segurança para chaves e tokens de acesso.
 * **Arquitetura de Software:** Capacidade de separar a lógica do projeto em módulos (checagem, notificação) para facilitar a manutenção.
-* **DevOps Básico:** Configuração de agendamentos e automação de tarefas em um ambiente de nuvem.
+* **DevOps Básico:** Configuração de agendamentos e automação de tarefas em um ambiente de nuvem
