@@ -1,0 +1,28 @@
+{
+  "name": "bitalert",
+  "version": "1.0.0",
+  "description": "Este projeto consiste em um sistema de alerta autônomo e de baixo custo, construído sobre uma arquitetura **serverless**. O objetivo é monitorar o preço de um ativo financeiro específico (como o Bitcoin) e enviar notificações por SMS para o usuário quando um preço-alvo de compra ou venda for atingido ou estiver próximo.",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoaN-Hardem/BitAlert.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LoaN-Hardem/BitAlert/issues"
+  },
+  "homepage": "https://github.com/LoaN-Hardem/BitAlert#readme",
+  "dependencies": {
+    "axios": "^1.11.0",
+    "twilio": "^5.8.0"
+  }
+}
